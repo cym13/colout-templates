@@ -1,5 +1,20 @@
 #encoding: utf-8
 
+"""
+TCPDUMP
+=======
+
+Colors the left side according to the kind of packet we are encountering:
+    - blue   -> ICMP
+    - purple -> UDP
+    - red    -> ARP
+    - cyan   -> IP
+    - white  -> anything else
+
+The layer 3 protocol is set in green, source and destination in yellow and
+other important information in purple.
+"""
+
 def theme(context):
     return context,[
             [ "^([0-9]+:[0-9]+:[0-9.]+) (.*) ([^ ]+)\.[^. ]+ > ([^ ]+)\.[^.:]+(:) (ICMP6?).*$",
